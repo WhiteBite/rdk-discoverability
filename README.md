@@ -46,10 +46,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: WhiteBite/rdk-discoverability@v1.0.0
+      - uses: WhiteBite/rdk-discoverability@v1
         with:
           min_score: ${{ vars.RDK_MIN_SCORE || 0 }}
 ```
+
+That is the whole setup: GitHub downloads the action, the action pulls the
+engine from npm. Nothing to fork, nothing to install — and exactly two files
+ever appear in your repository: this workflow and the generated
+`.discoverability/project.yml` (created by `npx repo-aeo init`).
 
 ## Inputs
 

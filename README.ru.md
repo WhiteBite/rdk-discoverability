@@ -45,10 +45,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: WhiteBite/rdk-discoverability@v1.0.0
+      - uses: WhiteBite/rdk-discoverability@v1
         with:
           min_score: ${{ vars.RDK_MIN_SCORE || 0 }}
 ```
+
+Это вся настройка: GitHub сам скачивает экшен, экшен сам тянет движок из
+npm. Ничего форкать и устанавливать не нужно — в вашем репозитории появятся
+ровно два файла: этот воркфлоу и сгенерированный `.discoverability/project.yml`
+(создаётся командой `npx repo-aeo init`).
 
 ## Входы
 
