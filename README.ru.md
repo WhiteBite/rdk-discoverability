@@ -4,6 +4,29 @@
 
 GitHub Action-обёртка над [repo-aeo](https://github.com/WhiteBite/repo-aeo) — Repo Discoverability Kit. Запускает аудит обнаруживаемости на каждый pull request, публикует скор и находки комментарием в PR, гейтит прогон по минимальному скору и умеет открывать autofix-PR, если проверяемый репозиторий это разрешил.
 
+## Зачем
+
+Разовый аудит discoverability деградирует. Через полгода контрибьютор
+«причёсывает» README, quickstart уезжает за 60-ю строку, тесты остаются
+зелёными — и репозиторий тихо исчезает из поиска и AI-ответов. Этот экшен
+превращает аудит в CI-гейт: каждый pull request получает скор и находки
+комментарием, а прогон падает, когда скор опускается ниже `min_score`.
+
+```markdown
+<!-- rdk-discoverability-audit -->
+## Discoverability audit — 71/100 (grade D)
+
+`quickchart` · 38/44 checks passed · 1 error · 2 warnings
+
+### Top findings
+
+🔴 **No install/run commands in the first 60 lines**
+   - why: Readers (and agents summarising the repo) decide within seconds
+     whether the project works for them.
+   - fix: Move a copy-pasteable install + run block above the fold. Use the
+     quickstart section of .discoverability/project.yml as the source of truth.
+```
+
 ## Использование
 
 ```yaml
