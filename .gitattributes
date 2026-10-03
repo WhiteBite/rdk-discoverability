@@ -1,0 +1,2 @@
+# LF everywhere so checkouts hash identically on every platform
+* text=auto eol=lf
