@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: WhiteBite/rdk-discoverability@v0.3.7
+      - uses: WhiteBite/rdk-discoverability@v1.0.0
         with:
           min_score: ${{ vars.RDK_MIN_SCORE || 0 }}
 ```
@@ -33,7 +33,7 @@ jobs:
 | --- | --- | --- |
 | `min_score` | `0` | Fail the run when the Discoverability Score is below this value |
 | `online` | `true` | Probe outbound links and read live GitHub metadata |
-| `cli` | `npx --yes repo-aeo@^0.3.0` | Command that invokes the CLI (an in-repo copy works too) |
+| `cli` | `npx --yes repo-aeo@^1.0.0` | Command that invokes the CLI (an in-repo copy works too) |
 | `comment` | `true` | Publish/update the PR comment with the report |
 
 The audit is read-only; the only write is the PR comment. Autofix PRs open only when the audited repository sets `safety.allow_autofix: true` in its `.discoverability/project.yml`.
