@@ -64,7 +64,11 @@ The audit is read-only; the only write is the PR comment. Autofix PRs open only 
 
 ## Versions
 
-The action is a thin runner over the `repo-aeo` CLI, and its tags track the engine version. `WhiteBite/repo-aeo/action@vX` — the in-repo composite action — stays supported for existing consumers.
+The action is a thin runner over the `repo-aeo` CLI, and its tags track the
+engine version: the `sync-engine` workflow watches repo-aeo releases and
+bumps the pinned caret spec, tags the engine version and moves the major tag
+automatically — no manual sync. Use `WhiteBite/rdk-discoverability@v1` to
+stay on the current major, or pin an exact version tag.
 
 ## License
 
