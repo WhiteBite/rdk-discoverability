@@ -14,9 +14,9 @@ inputs:
     required: false
     default: 'true'
   cli:
-    description: 'Command used to invoke the CLI (e.g. npx --yes repo-aeo@^1.0.0, or node path/to/bin/rdk.js for an in-repo copy)'
+    description: 'Command used to invoke the CLI (e.g. npx --yes repo-aeo@^1.1.0, or node path/to/bin/rdk.js for an in-repo copy)'
     required: false
-    default: 'npx --yes repo-aeo@^1.0.0'
+    default: 'npx --yes repo-aeo@^1.1.0'
   comment:
     description: 'Publish/update a PR comment with the report'
     required: false

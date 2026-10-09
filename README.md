@@ -62,7 +62,7 @@ ever appear in your repository: this workflow and the generated
 | --- | --- | --- |
 | `min_score` | `0` | Fail the run when the Discoverability Score is below this value |
 | `online` | `true` | Probe outbound links and read live GitHub metadata |
-| `cli` | `npx --yes repo-aeo@^1.0.0` | Command that invokes the CLI (an in-repo copy works too) |
+| `cli` | `npx --yes repo-aeo@^1.1.0` | Command that invokes the CLI (an in-repo copy works too) |
 | `comment` | `true` | Publish/update the PR comment with the report |
 
 The audit is read-only; the only write is the PR comment. Autofix PRs open only when the audited repository sets `safety.allow_autofix: true` in its `.discoverability/project.yml`.
